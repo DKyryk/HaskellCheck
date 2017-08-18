@@ -10,6 +10,16 @@ findMax a b = if a >= b
 
 concatLists a b = a ++ b
 
-getNthElement a i = a !! i
+getNthElement list i = list !! i
 
-getMiddleElement a = a !! (div (length a) 2)
+getMiddleElement list = list !! (div (length list) 2)
+
+invertList list = reverse list
+
+sumList list = sum list
+
+getFirstElements list size = take size list
+
+dropFirstElements list size = drop size list
+
+contains list element = element `elem` list
