@@ -1,0 +1,2 @@
+# HaskellCheck
+Learning Haskell
