@@ -31,3 +31,16 @@ contains list element = element `elem` list
 
 -- Intervals creation operations
 createRange start end = [start..end]
+
+-- Generates set of even numbers
+generateEvenSet setSize = [x * 2 | x <- [1..setSize]]
+
+generateSquareSet setSize resultLimit = [x * x | x <- [1..setSize], x * x <= resultLimit]
+
+--- _ symbol indicates unused result
+length' source = sum[1 | _ <- source]
+
+-- Tuple is a language feature. List contain homogeneous data, Tuple contain heterogeneous data
+combineToThreeTuple a b c = (a, b, c)
+
+createPairs xValues yValues = zip xValues yValues
