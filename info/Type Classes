@@ -17,3 +17,7 @@ Types of this class are (), Bool, Char, Ordering, Int, Integer, Float, Double.
 Tuple is also a bounded type if all values inside are bounded
 
 7) Num - digit types (Int, Integer, Float, Double). Requirement for being a Num class type - being a Show and Eq type as well
+
+8) Floating - floating point digits (Float and Double)
+
+9) Integral - integral digits (Int, Integer)
