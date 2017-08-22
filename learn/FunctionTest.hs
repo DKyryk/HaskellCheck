@@ -5,6 +5,7 @@ isEqual a b = a == b
 isZero a = a == 0
 
 --Conditional if. Else is required always
+findMax :: Ord a => a -> a -> a
 findMax a b = if a >= b
               then a
               else b

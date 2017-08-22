@@ -6,3 +6,7 @@ Haskell types
 5) Bool - boolean
 6) Char - Unicode character
 7) () - tuple
+
+8) Ordering - result of comparison. Values are GT, LT, EQ
+9) [] - list of any homogenous values (same type)
+10) [Char] or String - type representing string or list of characters
