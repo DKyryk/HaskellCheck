@@ -1,0 +1,97 @@
+module LanguageStructures where
+
+isEqual a b = a == b
+
+isZero a = a == 0
+
+--Conditional if. Else is required always
+findMax :: Ord a => a -> a -> a
+findMax a b = if a >= b
+              then a
+              else b
+
+--Operations on lists
+concatLists :: [a] -> [a] -> [a]
+concatLists a b = a ++ b
+
+--indexed get element of list
+getNthElement :: [a] -> Int -> a
+getNthElement list i = list !! i
+
+getMiddleElement list = list !! (div (length list) 2)
+
+invertList list = reverse list
+
+sumList list = sum list
+
+--substring/sublist from 0 index
+substringFromStart list size = take size list
+
+--substring/sublist from @size index
+substringFromSize list size = drop size list
+
+contains list element = element `elem` list
+
+-- Intervals creation operations
+createRange :: Enum t => t -> t -> [t]
+createRange start end = [start..end]
+
+-- Generates set of even numbers
+generateEvenSet :: Int -> [Int]
+generateEvenSet setSize = [x * 2 | x <- [1..setSize]]
+
+generateSquareSet setSize resultLimit = [x * x | x <- [1..setSize], x * x <= resultLimit]
+
+--- _ symbol indicates unused result
+length' :: [a] -> Int
+length' source = sum[1 | _ <- source]
+
+-- Tuple is a language feature. List contain homogeneous data, Tuple contain heterogeneous data
+combineToThreeTuple a b c = (a, b, c)
+
+createPairs xValues yValues = zip xValues yValues
+
+-- where allows to define calculation result as variable and use it in guards (Pipe symbol)
+testWhere :: Int -> Int -> String
+testWhere a b
+    | processed < 50 = "Less than 50"
+    | processed <= 100 = "Less than 100"
+    | otherwise = "More than 100"
+    where processed = a * 10 + b
+
+
+-- multiple where block. all variable names must be indented as one column. Otherwise it would be an error
+bmiTell :: Double -> Double -> String
+bmiTell weight height
+        | bmi <= skinny = "You're underweight, you emo, you!"
+        | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"
+        | bmi <= fat    = "You're fat! Lose some weight, fatty!"
+        | otherwise     = "You're a whale, congratulations!"
+        where bmi = weight / height ^ 2
+              skinny = 18.5
+              normal = 25.0
+              fat = 30.0
+
+-- pattern matching could be used in where block
+initials :: String -> String -> String
+initials firstName lastName = [f] ++ ". " ++ [l] ++ "."
+    where (f:_) = firstName
+          (l:_) = lastName
+
+-- let defines variables that could be used in "in" block further. The form is let <bindings> in <expression>
+-- The difference from where is that let bindings are expressions themselves. where bindings are just syntactic constructs
+cylinder :: Double -> Double -> Double
+cylinder r h =
+    let sideArea = 2 * pi * r * h
+        topArea = pi * r ^2
+    in  sideArea + 2 * topArea
+
+-- another king of pattern matching (that could be used not only in function parameters) - is operator case
+-- case expression of pattern -> result
+--                    pattern -> result
+--                    pattern -> result
+
+describeList :: [a] -> String
+describeList xs = "The list is " ++ case xs of [] -> "empty."
+                                               [x] -> "a singleton list."
+                                               xs -> "a longer list."
