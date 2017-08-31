@@ -10,32 +10,6 @@ findMax a b = if a >= b
               then a
               else b
 
---Operations on lists
-concatLists :: [a] -> [a] -> [a]
-concatLists a b = a ++ b
-
---Put before head of list (operation :)
-beforeHead :: a -> [a] -> [a]
-beforeHead a list = a : list
-
---indexed get element of list
-getNthElement :: [a] -> Int -> a
-getNthElement list i = list !! i
-
-getMiddleElement list = list !! (div (length list) 2)
-
-invertList list = reverse list
-
-sumList list = sum list
-
---substring/sublist from 0 index
-substringFromStart list size = take size list
-
---substring/sublist from @size index
-substringFromSize list size = drop size list
-
-contains list element = element `elem` list
-
 -- Intervals creation operations
 createRange :: Enum t => t -> t -> [t]
 createRange start end = [start..end]
@@ -52,8 +26,6 @@ length' source = sum[1 | _ <- source]
 
 -- Tuple is a language feature. List contain homogeneous data, Tuple contain heterogeneous data
 combineToThreeTuple a b c = (a, b, c)
-
-createPairs xValues yValues = zip xValues yValues
 
 -- where allows to define calculation result as variable and use it in guards (Pipe symbol)
 testWhere :: Int -> Int -> String
@@ -121,7 +93,3 @@ applyTwice f x = f (f x)
 
 pow4 :: (Num a) => a -> a
 pow4 a = applyTwice (^2) a
-
--- takeWhile iterates over list starting from head while predicate is true
-getFirstWord ::  String -> String
-getFirstWord chars = takeWhile (/=' ') chars
