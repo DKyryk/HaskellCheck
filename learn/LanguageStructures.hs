@@ -14,6 +14,10 @@ findMax a b = if a >= b
 concatLists :: [a] -> [a] -> [a]
 concatLists a b = a ++ b
 
+--Put before head of list (operation :)
+beforeHead :: a -> [a] -> [a]
+beforeHead a list = a : list
+
 --indexed get element of list
 getNthElement :: [a] -> Int -> a
 getNthElement list i = list !! i
@@ -95,3 +99,25 @@ describeList :: [a] -> String
 describeList xs = "The list is " ++ case xs of [] -> "empty."
                                                [x] -> "a singleton list."
                                                xs -> "a longer list."
+
+--calling functions with too few parameters, we're creating new functions on the fly.
+multThree :: (Num a) => a -> a -> a -> a
+multThree x y z = x * y * z
+
+multTwoWithNine = multThree 9
+
+multWithEighteen = multTwoWithNine 2
+
+compareWithHundred :: (Num a, Ord a) => a -> Ordering
+compareWithHundred = compare 100
+
+--section allows to define parameter of infix function as a new function
+divideByTen :: (Floating a) => a -> a
+divideByTen = (/10)
+
+-- function as a parameter
+applyTwice :: (a -> a) -> a -> a
+applyTwice f x = f (f x)
+
+pow4 :: (Num a) => a -> a
+pow4 a = applyTwice (^2) a

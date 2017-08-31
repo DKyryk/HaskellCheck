@@ -8,3 +8,11 @@ quickSort (x:xs) =
         biggerSorted = quickSort [a | a <- xs, a > x]
     in  smallerSorted ++ [x] ++ biggerSorted
 
+
+quickSortWithFilter :: (Ord a) => [a] -> [a]
+quickSortWithFilter [] = []
+quickSortWithFilter [x] = [x]
+quickSortWithFilter (x:xs) =
+    let smallerSorted = quickSort (filter (<= x) xs)
+        biggerSorted = quickSort (filter (> x) xs)
+    in  smallerSorted ++ [x] ++ biggerSorted

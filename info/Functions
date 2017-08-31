@@ -1,6 +1,14 @@
-Higher order functions
+1) Higher order functions
 
 Haskell functions can take functions as parameters and return functions as return values.
 A function that does either of those is called a higher order function.
 Every function in Haskell officially only takes one parameter.
 All the functions that accepted several parameters so far have been curried functions.
+If you call function with several parameters internally it transform to sub function with one parameter that returns another function.
+By calling functions with too few parameters, so to speak, we're creating new functions on the fly.
+
+2) Sections
+
+Infix functions can also be partially applied by using sections.
+To section an infix function, simply surround it with parentheses and only supply a parameter on one side.
+That creates a function that takes one parameter and then applies it to the side that's missing an operand.
