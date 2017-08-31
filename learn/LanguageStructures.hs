@@ -121,3 +121,7 @@ applyTwice f x = f (f x)
 
 pow4 :: (Num a) => a -> a
 pow4 a = applyTwice (^2) a
+
+-- takeWhile iterates over list starting from head while predicate is true
+getFirstWord ::  String -> String
+getFirstWord chars = takeWhile (/=' ') chars
