@@ -13,3 +13,6 @@ calcLongSequences :: Int -> Int -> Int
 calcLongSequences limit maxFirstValue =
        length (filter isLong (map buildSequence [1 .. maxFirstValue]))
        where isLong seq = length seq > limit
+
+calcLongSequences' :: Int -> Int -> Int
+calcLongSequences' limit maxFirstValue = length (filter (\xs -> length xs > limit) (map buildSequence [1 .. maxFirstValue]))
