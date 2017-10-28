@@ -1,3 +1,4 @@
+#Folds
 Back when we were dealing with recursion,
 we noticed a theme throughout many of the recursive functions that operated on lists.
 Usually, we'd have an edge case for the empty list.
@@ -34,6 +35,7 @@ They assume the first (or last) element of the list to be the starting value and
 "scanl" and "scanr" are like "foldl" and "foldr", only they report all the intermediate accumulator states in the form of a list.
 There are also "scanl1" and "scanr1", which are analogous to "foldl1" and "foldr1".
 
+```
 ghci> scanl (+) 0 [3,5,2,1]
 [0,3,8,10,11]
 ghci> scanr (+) 0 [3,5,2,1]
@@ -41,4 +43,5 @@ ghci> scanr (+) 0 [3,5,2,1]
 ghci> scanl1 (\acc x -> if x > acc then x else acc) [3,4,5,3,7,9,2,1]
 [3,4,5,5,7,9,9,9]
 ghci> scanl (flip (:)) [] [3,2,1]
-[[],[3],[2,3],[1,2,3]]  
+[[],[3],[2,3],[1,2,3]]
+```  
