@@ -1,18 +1,19 @@
-#Custom type
+# Custom type
 
 >data
 
 keyword describes a new type.
 
-The part before the = denotes the type. 
-The parts after the = are value constructors. 
-They specify the different values that this type can have. 
-The | is read as or.  
+The part before the = denotes the type.
+The parts after the = are value constructors.
+They specify the different values that this type can have.
+The | is read as or.
 Both the type name and the value constructors have to be capital cased.
 
 For example boolean type description is
-```
-data Bool = False | True  
+
+```haskell
+data Bool = False | True
 ```
 
 So when we write a value constructor, we can optionally add some types after it and those types define the values it will contain.
