@@ -1,4 +1,5 @@
-#Lambdas
+# Lambdas
+
 Lambdas are basically anonymous functions that are used because we need some functions only once.
 Normally, we make a lambda with the sole purpose of passing it to a higher-order function.
 To make a lambda, we write a \ (because it kind of looks like the greek letter lambda if you squint hard enough)

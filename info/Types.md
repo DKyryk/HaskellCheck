@@ -1,4 +1,5 @@
-#Haskell types
+# Haskell types
+
 1) **Int** - limited number (limits depend on processor bit capacity). In 32x CPU values are in [-2 147 483 648, 2 147 483 647]
 2) **Integer** - unlimited number
 3) **Float** - single-precision floating-point number

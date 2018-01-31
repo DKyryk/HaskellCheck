@@ -1,4 +1,4 @@
-#Type classes define behavior.
+# Type classes define behavior
 
 Existing type classes:
 1) **Eq** - used for types that support equality check (operators ==, /=)

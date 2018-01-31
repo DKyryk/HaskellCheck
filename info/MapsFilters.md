@@ -2,17 +2,19 @@
 
 map takes a function and a list and applies that function to every element in the list, producing a new list.
 Let's see what its type signature is and how it's defined.
-```
+
+```haskell
 map :: (a -> b) -> [a] -> [b]
 map _ [] = []
 map f (x:xs) = f x : map f xs
 ```
+
 filter is a function that takes a predicate
 (a predicate is a function that tells whether something is true or not, so in our case, a function that returns a boolean value)
 and a list and then returns the list of elements that satisfy the predicate.
 The type signature and implementation go like this:
 
-```
+```haskell
 filter :: (a -> Bool) -> [a] -> [a]
 filter _ [] = []
 filter p (x:xs)
