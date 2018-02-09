@@ -1,5 +1,9 @@
 # Functions
 
+Functions can’t begin with capital letters.
+Symbol ' is used to denote either a strict version of a function (i.e., one that isn’t lazy),
+or a slightly modified version of a function or variable with a similar name.
+
 ## 1) Higher order functions
 
 Haskell functions can take functions as parameters and return functions as return values.

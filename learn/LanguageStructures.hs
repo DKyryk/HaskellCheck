@@ -18,6 +18,13 @@ createRange start end = [start..end]
 generateEvenSet :: Int -> [Int]
 generateEvenSet setSize = [x * 2 | x <- [1..setSize]]
 
+isDigitsOnlyString :: [Char] -> Bool
+isDigitsOnlyString source = length source == length [x | x <- source, elem x ['1'..'9']]
+
+-- list comprehension is a standard haskell construct
+-- It contains [operation on element, how to get elements, filter predicate(s)]
+-- multiple predicates are separated by comma
+-- x <- [1..20] means get numbers from 1 to 20
 generateSquareSet setSize resultLimit = [x * x | x <- [1..setSize], x * x <= resultLimit]
 
 --- _ symbol indicates unused result

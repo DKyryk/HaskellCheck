@@ -1,5 +1,10 @@
 # Type classes define behavior
 
+A type class is an interface that defines some behavior.
+If a type is an instance of a type class,
+then it supports and implements the behavior the type class describes.
+Everything before => symbol in type description is called a class constraint. 
+
 Existing type classes:
 1) **Eq** - used for types that support equality check (operators ==, /=)
 
