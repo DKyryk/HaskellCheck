@@ -34,6 +34,13 @@ length' source = sum[1 | _ <- source]
 -- Tuple is a language feature. List contain homogeneous data, Tuple contain heterogeneous data
 combineToThreeTuple a b c = (a, b, c)
 
+-- Pattern matching.
+-- Patterns will be checked from top to bottom.
+-- When the passed argument conforms to a specified pattern, the corresponding function body will be used.
+lucky :: Int -> String
+lucky 7 = "LUCKY NUMBER SEVEN!"
+lucky x = "Sorry, you're out of luck, pal!"
+
 -- where allows to define calculation result as variable and use it in guards (Pipe symbol)
 testWhere :: Int -> Int -> String
 testWhere a b
